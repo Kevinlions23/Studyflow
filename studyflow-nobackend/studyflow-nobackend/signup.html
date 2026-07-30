@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-bg" data-page="signup">
+    <main class="auth-wrap">
+        <section class="auth-card card">
+            <div class="auth-header">
+                <div class="brand">StudyFlow AI</div>
+                <p class="tagline muted mt-8">Create your account</p>
+            </div>
+            <form id="signup-form" novalidate>
+                <div class="field">
+                    <label for="fullName">Full name</label>
+                    <input id="fullName" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" autocomplete="new-password" required />
+                    <p class="password-hint muted">At least 8 characters.</p>
+                </div>
+                <div class="field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input id="confirmPassword" type="password" autocomplete="new-password" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create account</button>
+            </form>
+            <p class="auth-footer muted">Already have an account? <a href="login.html">Log in</a></p>
+        </section>
+    </main>
+    <script type="module" src="auth.js"></script>
+</body>
+</html>

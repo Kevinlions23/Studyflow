@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-bg">
+    <main class="onboarding-shell">
+        <section class="onboarding-card card">
+            <div class="auth-header">
+                <div class="brand">StudyFlow AI</div>
+                <p class="tagline muted mt-8">One quick thing</p>
+            </div>
+            <h2 class="mt-16">What should we call you?</h2>
+            <p class="muted mt-8">This is the name you'll see around the app.</p>
+            <div class="field mt-16">
+                <label for="display-name">Display name</label>
+                <input id="display-name" type="text" placeholder="e.g. Kevin" maxlength="40" />
+            </div>
+            <button id="continue-btn" type="button" class="btn btn-primary btn-block">Continue</button>
+        </section>
+    </main>
+    <script type="module" src="onboarding.js"></script>
+</body>
+</html>

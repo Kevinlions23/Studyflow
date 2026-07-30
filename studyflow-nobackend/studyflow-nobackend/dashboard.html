@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="app-sidebar">
+            <div class="brand">StudyFlow AI</div>
+            <nav class="mt-24">
+                <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="library.html">My Library</a>
+                <a class="nav-link" href="upload-book.html">Upload a Book</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" type="button" class="btn btn-ghost btn-block">Toggle theme</button>
+                <button id="logout-btn" type="button" class="btn btn-danger btn-block mt-8">Log out</button>
+            </div>
+        </aside>
+
+        <div class="app-main">
+            <header class="app-topbar spread">
+                <div>
+                    <h1>Welcome back, <span id="welcome-name">there</span></h1>
+                    <p class="muted">Continue building your knowledge one chapter at a time.</p>
+                </div>
+                <a class="btn btn-primary" href="upload-book.html">+ Upload a Book</a>
+            </header>
+
+            <main class="app-content">
+                <!-- Stats -->
+                <section class="stats-grid">
+                    <div class="stat-card card">
+                        <span class="stat-value" id="stat-studying">0</span>
+                        <span class="stat-label muted">Books studying</span>
+                    </div>
+                    <div class="stat-card card">
+                        <span class="stat-value" id="stat-completed">0</span>
+                        <span class="stat-label muted">Books completed</span>
+                    </div>
+                    <div class="stat-card card">
+                        <span class="stat-value" id="stat-chapters">0</span>
+                        <span class="stat-label muted">Chapters completed</span>
+                    </div>
+                    <div class="stat-card card">
+                        <span class="stat-value" id="stat-quizavg">0%</span>
+                        <span class="stat-label muted">Avg quiz score</span>
+                    </div>
+                    <div class="stat-card card">
+                        <span class="stat-value" id="stat-streak">0</span>
+                        <span class="stat-label muted">Day streak</span>
+                    </div>
+                </section>
+
+                <!-- Continue studying -->
+                <section class="mt-24">
+                    <h2>Continue studying</h2>
+                    <div id="continue-area" class="mt-16">
+                        <div class="card muted">Loading…</div>
+                    </div>
+                </section>
+
+                <!-- My books -->
+                <section class="mt-24">
+                    <div class="spread">
+                        <h2>My books</h2>
+                        <a href="library.html">View all</a>
+                    </div>
+                    <div id="books-grid" class="books-grid mt-16"></div>
+                </section>
+
+                <!-- Recent activity -->
+                <section class="mt-24">
+                    <h2>Recent activity</h2>
+                    <ul id="activity-list" class="activity-list mt-16"></ul>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

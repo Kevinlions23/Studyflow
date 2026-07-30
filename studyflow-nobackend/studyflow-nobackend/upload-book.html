@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload a Book — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="app-sidebar">
+            <div class="brand">StudyFlow AI</div>
+            <nav class="mt-24">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="library.html">My Library</a>
+                <a class="nav-link active" href="upload-book.html">Upload a Book</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" type="button" class="btn btn-ghost btn-block">Toggle theme</button>
+                <button id="logout-btn" type="button" class="btn btn-danger btn-block mt-8">Log out</button>
+            </div>
+        </aside>
+
+        <div class="app-main">
+            <header class="app-topbar">
+                <h1>Upload a Book</h1>
+                <p class="muted">Add an educational PDF to start learning chapter by chapter.</p>
+            </header>
+
+            <main class="app-content">
+                <section class="card upload-card">
+                    <div id="dropzone" class="dropzone">
+                        <p class="dropzone-title">Drag &amp; drop your PDF here</p>
+                        <p class="muted">or</p>
+                        <button id="browse-btn" type="button" class="btn btn-ghost">Browse files</button>
+                        <input id="file-input" type="file" accept="application/pdf" class="hidden" />
+                        <p class="muted mt-16">PDF only · up to 1 GB</p>
+                    </div>
+
+                    <div id="file-meta" class="hidden mt-16">
+                        <div class="field">
+                            <label for="book-title">Title</label>
+                            <input id="book-title" type="text" />
+                        </div>
+                        <div class="field">
+                            <label for="book-author">Author (optional)</label>
+                            <input id="book-author" type="text" />
+                        </div>
+                        <p id="chosen-file" class="muted"></p>
+                        <div class="row mt-16">
+                            <button id="upload-btn" type="button" class="btn btn-primary">Upload book</button>
+                            <button id="cancel-btn" type="button" class="btn btn-ghost">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div id="progress-area" class="hidden mt-16">
+                        <div class="progress-track"><div id="upload-progress" class="progress-fill"></div></div>
+                        <p id="progress-text" class="muted mt-8">Starting…</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="upload.js"></script>
+</body>
+</html>

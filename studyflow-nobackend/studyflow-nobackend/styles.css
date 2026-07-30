@@ -1,0 +1,343 @@
+/* ============================================================
+   StudyFlow AI — main stylesheet
+   No global-scope selector, no CSS custom properties, no inline styles.
+   Theming is done with [data-theme="dark|light"] attribute selectors.
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* ---------- dark theme (default) ---------- */
+[data-theme="dark"] body {
+    background-color: #0b1120;
+    color: #e2e8f0;
+}
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel {
+    background-color: #111a2e;
+    border: 1px solid #1e293b;
+}
+[data-theme="dark"] .muted {
+    color: #94a3b8;
+}
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border: 1px solid #26344d;
+}
+[data-theme="dark"] .option-btn {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    border: 1px solid #26344d;
+}
+[data-theme="dark"] .app-topbar,
+[data-theme="dark"] .app-sidebar {
+    background-color: #0d1526;
+    border-color: #1e293b;
+}
+
+/* ---------- light theme ---------- */
+[data-theme="light"] body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+[data-theme="light"] .card,
+[data-theme="light"] .panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+[data-theme="light"] .muted {
+    color: #64748b;
+}
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+[data-theme="light"] .option-btn {
+    background-color: #f8fafc;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+[data-theme="light"] .app-topbar,
+[data-theme="light"] .app-sidebar {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+/* ---------- typography ---------- */
+h1 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.4rem; font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+a { color: #3b82f6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #6366f1, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    font-size: 0.95rem;
+}
+
+/* ---------- layout containers ---------- */
+.container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.card {
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.spread {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* ---------- forms ---------- */
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+/* ---------- buttons ---------- */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: transform 0.05s ease, opacity 0.15s ease, background-color 0.15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-primary {
+    background: linear-gradient(90deg, #6366f1, #4f46e5);
+    color: #ffffff;
+}
+.btn-primary:hover { opacity: 0.92; }
+
+.btn-block { width: 100%; }
+
+.btn-ghost {
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid #334155;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+/* ---------- option buttons (onboarding / settings) ---------- */
+.option-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    transition: border-color 0.15s ease, transform 0.05s ease;
+}
+.option-btn:hover { border-color: #6366f1; }
+.option-btn.selected {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35) inset;
+    color: #a5b4fc;
+}
+
+/* ---------- auth pages ---------- */
+.auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+}
+.auth-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.auth-header .brand { font-size: 1.6rem; }
+.auth-footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+/* ---------- progress bar ---------- */
+.progress-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background-color: rgba(148, 163, 184, 0.25);
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6366f1, #22d3ee);
+    transition: width 0.3s ease;
+}
+
+/* ---------- onboarding steps ---------- */
+.onboarding-step { display: none; }
+.onboarding-step.active { display: block; }
+
+/* ---------- toasts ---------- */
+.toast-host {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+.toast {
+    min-width: 240px;
+    max-width: 360px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.toast-visible { opacity: 1; transform: translateX(0); }
+.toast-info { background-color: #334155; }
+.toast-success { background-color: #16a34a; }
+.toast-error { background-color: #dc2626; }
+
+/* ---------- app shell (dashboard-style pages) ---------- */
+.app-shell {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+.app-sidebar {
+    border-right: 1px solid;
+    padding: 20px 16px;
+}
+.app-main { display: flex; flex-direction: column; }
+.app-topbar {
+    border-bottom: 1px solid;
+    padding: 14px 24px;
+}
+.nav-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: inherit;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.nav-link:hover { background-color: rgba(99, 102, 241, 0.12); text-decoration: none; }
+.nav-link.active { background-color: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
+
+/* ---------- helpers ---------- */
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.hidden { display: none; }
+.divider {
+    height: 1px;
+    background-color: rgba(148, 163, 184, 0.2);
+    margin: 20px 0;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="app-sidebar">
+            <div class="brand">StudyFlow AI</div>
+            <nav class="mt-24">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="library.html">My Library</a>
+                <a class="nav-link" href="upload-book.html">Upload a Book</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" type="button" class="btn btn-ghost btn-block">Toggle theme</button>
+                <button id="logout-btn" type="button" class="btn btn-danger btn-block mt-8">Log out</button>
+            </div>
+        </aside>
+        <div class="app-main">
+            <header class="app-topbar">
+                <a href="library.html" class="muted">&larr; Back to library</a>
+                <h1 id="book-title" class="mt-8">Loading…</h1>
+                <p id="book-author" class="muted"></p>
+            </header>
+            <main class="app-content">
+                <section class="card">
+                    <h2>Read this book</h2>
+                    <p class="muted mt-8">Open the built-in PDF reader to start studying.</p>
+                    <a id="open-pdf" class="btn btn-primary mt-16" target="_blank" rel="noopener">Open PDF</a>
+                </section>
+                <section class="card mt-24">
+                    <h2>Chapters, quizzes &amp; summaries</h2>
+                    <p class="muted mt-8">
+                        Coming next: chapter detection, per-chapter quizzes with realistic
+                        exam-style questions, and notebook-ready AI summaries.
+                    </p>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="book-details.js"></script>
+</body>
+</html>

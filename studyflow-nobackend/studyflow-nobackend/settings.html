@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings — StudyFlow AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="app-sidebar">
+            <div class="brand">StudyFlow AI</div>
+            <nav class="mt-24">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="library.html">My Library</a>
+                <a class="nav-link" href="upload-book.html">Upload a Book</a>
+                <a class="nav-link active" href="settings.html">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" type="button" class="btn btn-ghost btn-block">Toggle theme</button>
+                <button id="logout-btn" type="button" class="btn btn-danger btn-block mt-8">Log out</button>
+            </div>
+        </aside>
+
+        <div class="app-main">
+            <header class="app-topbar">
+                <h1>Settings</h1>
+                <p class="muted">Manage your account.</p>
+            </header>
+
+            <main class="app-content">
+                <!-- Display name -->
+                <section class="card upload-card">
+                    <h2>Display name</h2>
+                    <div class="field mt-16">
+                        <label for="full-name">What we call you</label>
+                        <input id="full-name" type="text" maxlength="40" />
+                    </div>
+                    <button id="save-name" type="button" class="btn btn-primary">Save name</button>
+                </section>
+
+                <!-- Email -->
+                <section class="card upload-card mt-24">
+                    <h2>Email</h2>
+                    <p class="muted mt-8">
+                        Changing your email sends a confirmation link to the new address.
+                        The change only takes effect after you click that link.
+                    </p>
+                    <div class="field mt-16">
+                        <label for="email">Email address</label>
+                        <input id="email" type="email" autocomplete="email" />
+                    </div>
+                    <button id="save-email" type="button" class="btn btn-primary">Update email</button>
+                </section>
+
+                <!-- Session -->
+                <section class="card upload-card mt-24">
+                    <h2>Session</h2>
+                    <button id="logout-btn-2" type="button" class="btn btn-danger mt-16">Log out</button>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="settings.js"></script>
+</body>
+</html>
